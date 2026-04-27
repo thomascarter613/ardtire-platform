@@ -1,0 +1,37 @@
+$schema: "https://moonrepo.dev/schemas/tasks.json"
+
+tasks:
+  build:
+    command: "bun run build"
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+    outputs:
+      - "dist/**/*"
+
+  dev:
+    command: "bun run dev"
+    options:
+      persistent: true
+
+  lint:
+    command: "bunx biome lint --no-errors-on-unmatched ./src"
+    inputs:
+      - "src/**/*.{ts,tsx,js,jsx}"
+
+  format:
+    command: "bunx biome format --no-errors-on-unmatched ./src"
+    inputs:
+      - "src/**/*.{ts,tsx,js,jsx,json}"
+
+  typecheck:
+    command: "bunx tsc --noEmit"
+    inputs:
+      - "src/**/*.{ts,tsx}"
+      - "tsconfig.json"
+
+  test:
+    command: "bunx vitest run"
+    inputs:
+      - "src/**/*"
+      - "test/**/*"

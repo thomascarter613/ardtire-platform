@@ -1,0 +1,31 @@
+# =============================================================================
+# Lefthook — Git hooks for ardtire-platform
+# =============================================================================
+
+pre-commit:
+  parallel: true
+  commands:
+    biome-check:
+      glob: "*.{js,jsx,ts,tsx,json}"
+      run: bunx biome check --no-errors-on-unmatched --files-ignore-unknown=true {staged_files}
+    syncpack-check:
+      run: bun run syncpack
+      root: true
+
+commit-msg:
+  commands:
+    conventional-commits:
+      run: |
+        commit_msg=$(cat {1})
+        pattern="^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\(.+\))?: .{1,100}$"
+        if ! echo "$commit_msg" | grep -qP "$pattern"; then
+          echo "❌ Commit message does not follow Conventional Commits."
+          echo "   Format: type(scope): description"
+          echo "   Example: feat(gov-api): add proposal creation endpoint"
+          exit 1
+        fi
+
+pre-push:
+  commands:
+    typecheck:
+      run: moon run :typecheck

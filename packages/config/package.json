@@ -1,0 +1,13 @@
+{
+  "name": "@ardtire/config",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "build": "echo 'TODO: configure build'",
+    "dev": "echo 'TODO: configure dev'",
+    "lint": "biome lint ./src",
+    "format": "biome format ./src",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  }
+}

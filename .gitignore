@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+build/
+out/
+.next/
+.turbo/
+
+# Bun
+bun.lockb
+
+# Moon
+.moon/cache/
+.moon/docker/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+
+# Type generation
+*.generated.ts
+*.generated.d.ts
+
+# Prisma
+prisma/migrations/.migration_lock.toml
+
+# Test
+coverage/
+.vitest/
+
+# Payload CMS
+media/
+
+# Ruby / Decidim
+*.gem
+*.rbc
+.bundle/
+vendor/bundle/
+.ruby-version

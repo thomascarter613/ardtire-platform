@@ -1,0 +1,6 @@
+$schema: "https://moonrepo.dev/schemas/project.json"
+
+id: "ardtire-worker"
+language: "typescript"
+
+# Task overrides go here. Omit to inherit workspace defaults from .moon/tasks.yml.

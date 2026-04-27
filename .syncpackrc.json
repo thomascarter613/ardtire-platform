@@ -1,0 +1,41 @@
+{
+  "$schema": "https://unpkg.com/syncpack/dist/config.schema.json",
+  "indent": "  ",
+  "semverGroups": [],
+  "versionGroups": [
+    {
+      "label": "Fumadocs and Next.js — permitted only in apps/docs, apps/log, packages/ui-docs",
+      "packages": [
+        "ardtire-www",
+        "ardtire-my",
+        "ardtire-admin",
+        "ardtire-gov-api",
+        "ardtire-worker",
+        "ardtire-cms",
+        "@ardtire/ui",
+        "@ardtire/db",
+        "@ardtire/types",
+        "@ardtire/config",
+        "@ardtire/auth",
+        "@ardtire/logger",
+        "@ardtire/tokens"
+      ],
+      "dependencies": [
+        "next",
+        "react",
+        "react-dom",
+        "fumadocs-core",
+        "fumadocs-ui",
+        "fumadocs-mdx",
+        "fumadocs-openapi"
+      ],
+      "isBanned": true
+    },
+    {
+      "label": "Shared platform deps — must be identical across all TS/JS packages",
+      "packages": ["**"],
+      "dependencies": ["typescript", "zod", "@biomejs/biome", "vitest"],
+      "policy": "sameRange"
+    }
+  ]
+}

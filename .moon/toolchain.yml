@@ -1,0 +1,19 @@
+# =============================================================================
+# Moon toolchain — ardtire-platform
+# Single source of truth for all runtime versions.
+# Do NOT use .nvmrc, .ruby-version, or .tool-versions alongside this file.
+# =============================================================================
+$schema: "https://moonrepo.dev/schemas/toolchain.json"
+
+bun:
+  version: "1.1.38"
+  installArgs: ["--frozen-lockfile"]
+
+node:
+  version: "22.12.0"
+  packageManager: "bun"
+
+# Ruby is required for apps/cms-decidim (Decidim participation layer).
+# Pinned to the version compatible with the Decidim release in use.
+ruby:
+  version: "3.3.6"
