@@ -1,0 +1,369 @@
+/**
+ * @ardtire/tokens — Ardtire Platform Design Tokens
+ *
+ * All design tokens are declared as CSS custom properties on :root.
+ * Import this stylesheet once at the top level of each app:
+ *
+ *   SolidJS (apps/www, apps/my, apps/admin):
+ *     import "@ardtire/tokens/tokens.css"
+ *
+ *   Next.js (apps/docs, apps/log):
+ *     import "@ardtire/tokens/tokens.css" in layout.tsx
+ *
+ * Token naming convention:
+ *   --ardtire-{category}-{scale}
+ *   --ardtire-{semantic}-{variant}
+ *   --ardtire-register-{exterior|interior}-{role}
+ */
+
+:root {
+  /* ===========================================================================
+   * COLOR — Primary Scale (Indigo)
+   * The dominant heraldic colour of the Ardtire Society.
+   * =========================================================================*/
+
+  --ardtire-indigo-50:  #eef2ff;
+  --ardtire-indigo-100: #e0e7ff;
+  --ardtire-indigo-200: #c7d2fe;
+  --ardtire-indigo-300: #a5b4fc;
+  --ardtire-indigo-400: #818cf8;
+  --ardtire-indigo-500: #6366f1;
+  --ardtire-indigo-600: #4f46e5;
+  --ardtire-indigo-700: #4338ca;
+  --ardtire-indigo-800: #3730a3;
+  --ardtire-indigo-900: #312e81;
+  --ardtire-indigo-950: #1e1b4b;
+
+  /* ===========================================================================
+   * COLOR — Secondary Scale (Violet)
+   * Used for interior/Kingdom register surfaces and elevated formality.
+   * =========================================================================*/
+
+  --ardtire-violet-50:  #f5f3ff;
+  --ardtire-violet-100: #ede9fe;
+  --ardtire-violet-200: #ddd6fe;
+  --ardtire-violet-300: #c4b5fd;
+  --ardtire-violet-400: #a78bfa;
+  --ardtire-violet-500: #8b5cf6;
+  --ardtire-violet-600: #7c3aed;
+  --ardtire-violet-700: #6d28d9;
+  --ardtire-violet-800: #5b21b6;
+  --ardtire-violet-900: #4c1d95;
+  --ardtire-violet-950: #2e1065;
+
+  /* ===========================================================================
+   * COLOR — Gold / Amber
+   * Heraldic accent for interior Kingdom register; awards, ratification.
+   * =========================================================================*/
+
+  --ardtire-gold-50:  #fffbeb;
+  --ardtire-gold-100: #fef3c7;
+  --ardtire-gold-200: #fde68a;
+  --ardtire-gold-300: #fcd34d;
+  --ardtire-gold-400: #fbbf24;
+  --ardtire-gold-500: #f59e0b;
+  --ardtire-gold-600: #d97706;
+  --ardtire-gold-700: #b45309;
+  --ardtire-gold-800: #92400e;
+  --ardtire-gold-900: #78350f;
+  --ardtire-gold-950: #451a03;
+
+  /* ===========================================================================
+   * COLOR — Neutral (Slate)
+   * Base neutral palette for UI surfaces, borders, text.
+   * =========================================================================*/
+
+  --ardtire-neutral-0:   #ffffff;
+  --ardtire-neutral-50:  #f8fafc;
+  --ardtire-neutral-100: #f1f5f9;
+  --ardtire-neutral-200: #e2e8f0;
+  --ardtire-neutral-300: #cbd5e1;
+  --ardtire-neutral-400: #94a3b8;
+  --ardtire-neutral-500: #64748b;
+  --ardtire-neutral-600: #475569;
+  --ardtire-neutral-700: #334155;
+  --ardtire-neutral-800: #1e293b;
+  --ardtire-neutral-900: #0f172a;
+  --ardtire-neutral-950: #020617;
+  --ardtire-neutral-1000: #000000;
+
+  /* ===========================================================================
+   * COLOR — Semantic
+   * =========================================================================*/
+
+  /* Success */
+  --ardtire-success-subtle:   #f0fdf4;
+  --ardtire-success-muted:    #bbf7d0;
+  --ardtire-success-default:  #16a34a;
+  --ardtire-success-emphasis: #15803d;
+  --ardtire-success-fg:       #ffffff;
+
+  /* Warning */
+  --ardtire-warning-subtle:   #fffbeb;
+  --ardtire-warning-muted:    #fde68a;
+  --ardtire-warning-default:  #d97706;
+  --ardtire-warning-emphasis: #b45309;
+  --ardtire-warning-fg:       #ffffff;
+
+  /* Danger */
+  --ardtire-danger-subtle:    #fef2f2;
+  --ardtire-danger-muted:     #fecaca;
+  --ardtire-danger-default:   #dc2626;
+  --ardtire-danger-emphasis:  #b91c1c;
+  --ardtire-danger-fg:        #ffffff;
+
+  /* Info */
+  --ardtire-info-subtle:      #eff6ff;
+  --ardtire-info-muted:       #bfdbfe;
+  --ardtire-info-default:     #2563eb;
+  --ardtire-info-emphasis:    #1d4ed8;
+  --ardtire-info-fg:          #ffffff;
+
+  /* ===========================================================================
+   * COLOR — Register-specific tokens
+   * These tokens make the two-register boundary visually explicit in the UI.
+   * =========================================================================*/
+
+  /* Exterior register — Society (Indigo-dominant) */
+  --ardtire-register-exterior-bg:        var(--ardtire-neutral-0);
+  --ardtire-register-exterior-surface:   var(--ardtire-indigo-50);
+  --ardtire-register-exterior-border:    var(--ardtire-indigo-200);
+  --ardtire-register-exterior-accent:    var(--ardtire-indigo-600);
+  --ardtire-register-exterior-accent-fg: #ffffff;
+  --ardtire-register-exterior-text:      var(--ardtire-indigo-900);
+
+  /* Interior register — Kingdom (Violet + Gold) */
+  --ardtire-register-interior-bg:        var(--ardtire-violet-950);
+  --ardtire-register-interior-surface:   var(--ardtire-violet-900);
+  --ardtire-register-interior-border:    var(--ardtire-gold-600);
+  --ardtire-register-interior-accent:    var(--ardtire-gold-400);
+  --ardtire-register-interior-accent-fg: var(--ardtire-violet-950);
+  --ardtire-register-interior-text:      var(--ardtire-neutral-50);
+
+  /* ===========================================================================
+   * COLOR — UI semantic aliases
+   * Consumed by components rather than raw palette tokens.
+   * =========================================================================*/
+
+  --ardtire-color-bg:              var(--ardtire-neutral-0);
+  --ardtire-color-bg-subtle:       var(--ardtire-neutral-50);
+  --ardtire-color-bg-muted:        var(--ardtire-neutral-100);
+  --ardtire-color-surface:         var(--ardtire-neutral-0);
+  --ardtire-color-surface-raised:  var(--ardtire-neutral-50);
+  --ardtire-color-surface-overlay: var(--ardtire-neutral-0);
+
+  --ardtire-color-border:          var(--ardtire-neutral-200);
+  --ardtire-color-border-strong:   var(--ardtire-neutral-300);
+  --ardtire-color-border-focus:    var(--ardtire-indigo-500);
+
+  --ardtire-color-text:            var(--ardtire-neutral-900);
+  --ardtire-color-text-muted:      var(--ardtire-neutral-500);
+  --ardtire-color-text-subtle:     var(--ardtire-neutral-400);
+  --ardtire-color-text-on-primary: #ffffff;
+  --ardtire-color-text-link:       var(--ardtire-indigo-600);
+  --ardtire-color-text-link-hover: var(--ardtire-indigo-700);
+
+  --ardtire-color-primary:         var(--ardtire-indigo-600);
+  --ardtire-color-primary-hover:   var(--ardtire-indigo-700);
+  --ardtire-color-primary-active:  var(--ardtire-indigo-800);
+  --ardtire-color-primary-subtle:  var(--ardtire-indigo-50);
+  --ardtire-color-primary-muted:   var(--ardtire-indigo-100);
+
+  /* ===========================================================================
+   * TYPOGRAPHY — Font families
+   * =========================================================================*/
+
+  /* UI sans — used for all interface text */
+  --ardtire-font-sans: "Inter", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+
+  /* Formal serif — used for constitutional instruments, proclamations, formal documents */
+  --ardtire-font-serif: "EB Garamond", "Garamond", "Georgia", ui-serif, serif;
+
+  /* Monospace — used for code, IDs, reference numbers */
+  --ardtire-font-mono: "JetBrains Mono", "Fira Code", ui-monospace, "Cascadia Code",
+    "Source Code Pro", Menlo, Monaco, Consolas, monospace;
+
+  /* ===========================================================================
+   * TYPOGRAPHY — Scale
+   * Base: 16px (1rem). Scale ratio: 1.25 (Major Third).
+   * =========================================================================*/
+
+  --ardtire-text-xs:   0.75rem;    /* 12px */
+  --ardtire-text-sm:   0.875rem;   /* 14px */
+  --ardtire-text-base: 1rem;       /* 16px */
+  --ardtire-text-lg:   1.125rem;   /* 18px */
+  --ardtire-text-xl:   1.25rem;    /* 20px */
+  --ardtire-text-2xl:  1.5rem;     /* 24px */
+  --ardtire-text-3xl:  1.875rem;   /* 30px */
+  --ardtire-text-4xl:  2.25rem;    /* 36px */
+  --ardtire-text-5xl:  3rem;       /* 48px */
+  --ardtire-text-6xl:  3.75rem;    /* 60px */
+
+  /* ===========================================================================
+   * TYPOGRAPHY — Line heights
+   * =========================================================================*/
+
+  --ardtire-leading-none:    1;
+  --ardtire-leading-tight:   1.25;
+  --ardtire-leading-snug:    1.375;
+  --ardtire-leading-normal:  1.5;
+  --ardtire-leading-relaxed: 1.625;
+  --ardtire-leading-loose:   2;
+
+  /* ===========================================================================
+   * TYPOGRAPHY — Font weights
+   * =========================================================================*/
+
+  --ardtire-weight-light:    300;
+  --ardtire-weight-normal:   400;
+  --ardtire-weight-medium:   500;
+  --ardtire-weight-semibold: 600;
+  --ardtire-weight-bold:     700;
+  --ardtire-weight-black:    900;
+
+  /* ===========================================================================
+   * SPACING — 4px base grid
+   * =========================================================================*/
+
+  --ardtire-space-0:    0;
+  --ardtire-space-px:   1px;
+  --ardtire-space-0-5:  0.125rem;  /* 2px  */
+  --ardtire-space-1:    0.25rem;   /* 4px  */
+  --ardtire-space-1-5:  0.375rem;  /* 6px  */
+  --ardtire-space-2:    0.5rem;    /* 8px  */
+  --ardtire-space-2-5:  0.625rem;  /* 10px */
+  --ardtire-space-3:    0.75rem;   /* 12px */
+  --ardtire-space-3-5:  0.875rem;  /* 14px */
+  --ardtire-space-4:    1rem;      /* 16px */
+  --ardtire-space-5:    1.25rem;   /* 20px */
+  --ardtire-space-6:    1.5rem;    /* 24px */
+  --ardtire-space-7:    1.75rem;   /* 28px */
+  --ardtire-space-8:    2rem;      /* 32px */
+  --ardtire-space-10:   2.5rem;    /* 40px */
+  --ardtire-space-12:   3rem;      /* 48px */
+  --ardtire-space-14:   3.5rem;    /* 56px */
+  --ardtire-space-16:   4rem;      /* 64px */
+  --ardtire-space-20:   5rem;      /* 80px */
+  --ardtire-space-24:   6rem;      /* 96px */
+  --ardtire-space-32:   8rem;      /* 128px */
+
+  /* ===========================================================================
+   * BORDER RADIUS
+   * =========================================================================*/
+
+  --ardtire-radius-none:  0;
+  --ardtire-radius-sm:    0.125rem;  /* 2px  */
+  --ardtire-radius-base:  0.25rem;   /* 4px  */
+  --ardtire-radius-md:    0.375rem;  /* 6px  */
+  --ardtire-radius-lg:    0.5rem;    /* 8px  */
+  --ardtire-radius-xl:    0.75rem;   /* 12px */
+  --ardtire-radius-2xl:   1rem;      /* 16px */
+  --ardtire-radius-3xl:   1.5rem;    /* 24px */
+  --ardtire-radius-full:  9999px;
+
+  /* ===========================================================================
+   * SHADOWS
+   * =========================================================================*/
+
+  --ardtire-shadow-xs:  0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --ardtire-shadow-sm:  0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --ardtire-shadow-md:  0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --ardtire-shadow-lg:  0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --ardtire-shadow-xl:  0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --ardtire-shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --ardtire-shadow-inner: inset 0 2px 4px 0 rgb(0 0 0 / 0.05);
+  --ardtire-shadow-none: none;
+
+  /* Focus ring — used on interactive elements */
+  --ardtire-shadow-focus: 0 0 0 3px rgb(99 102 241 / 0.4);
+
+  /* ===========================================================================
+   * Z-INDEX
+   * =========================================================================*/
+
+  --ardtire-z-base:    0;
+  --ardtire-z-raised:  10;
+  --ardtire-z-dropdown: 100;
+  --ardtire-z-sticky:  200;
+  --ardtire-z-overlay: 300;
+  --ardtire-z-modal:   400;
+  --ardtire-z-popover: 500;
+  --ardtire-z-toast:   600;
+  --ardtire-z-tooltip: 700;
+
+  /* ===========================================================================
+   * MOTION
+   * Governance-appropriate: deliberate, not playful.
+   * =========================================================================*/
+
+  --ardtire-duration-instant:  0ms;
+  --ardtire-duration-fast:     100ms;
+  --ardtire-duration-normal:   200ms;
+  --ardtire-duration-slow:     300ms;
+  --ardtire-duration-slower:   500ms;
+
+  --ardtire-ease-default:  cubic-bezier(0.4, 0, 0.2, 1);
+  --ardtire-ease-in:       cubic-bezier(0.4, 0, 1, 1);
+  --ardtire-ease-out:      cubic-bezier(0, 0, 0.2, 1);
+  --ardtire-ease-in-out:   cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ===========================================================================
+   * DOCUMENT CLASSIFICATION — Visual indicators
+   * Five-tier T-0 through T-4 classification system.
+   * =========================================================================*/
+
+  --ardtire-classification-t0-bg:     var(--ardtire-neutral-100);
+  --ardtire-classification-t0-border: var(--ardtire-neutral-300);
+  --ardtire-classification-t0-text:   var(--ardtire-neutral-700);
+
+  --ardtire-classification-t1-bg:     var(--ardtire-indigo-50);
+  --ardtire-classification-t1-border: var(--ardtire-indigo-300);
+  --ardtire-classification-t1-text:   var(--ardtire-indigo-700);
+
+  --ardtire-classification-t2-bg:     #eff6ff;
+  --ardtire-classification-t2-border: #93c5fd;
+  --ardtire-classification-t2-text:   #1d4ed8;
+
+  --ardtire-classification-t3-bg:     var(--ardtire-warning-subtle);
+  --ardtire-classification-t3-border: var(--ardtire-warning-muted);
+  --ardtire-classification-t3-text:   var(--ardtire-warning-emphasis);
+
+  --ardtire-classification-t4-bg:     var(--ardtire-danger-subtle);
+  --ardtire-classification-t4-border: var(--ardtire-danger-muted);
+  --ardtire-classification-t4-text:   var(--ardtire-danger-emphasis);
+
+  /* ===========================================================================
+   * MEMBERSHIP TIER — Visual indicators
+   * =========================================================================*/
+
+  --ardtire-tier-associate-bg:     var(--ardtire-neutral-100);
+  --ardtire-tier-associate-border: var(--ardtire-neutral-300);
+  --ardtire-tier-associate-text:   var(--ardtire-neutral-700);
+
+  --ardtire-tier-full-bg:          var(--ardtire-indigo-50);
+  --ardtire-tier-full-border:      var(--ardtire-indigo-400);
+  --ardtire-tier-full-text:        var(--ardtire-indigo-800);
+
+  /* ===========================================================================
+   * BREAKPOINTS — declared as tokens for reference (not usable in media queries)
+   * Use these values in JS/TS for programmatic breakpoint logic.
+   * =========================================================================*/
+
+  --ardtire-breakpoint-sm:  640px;
+  --ardtire-breakpoint-md:  768px;
+  --ardtire-breakpoint-lg:  1024px;
+  --ardtire-breakpoint-xl:  1280px;
+  --ardtire-breakpoint-2xl: 1536px;
+}
+
+/* ===========================================================================
+ * DARK MODE — register interior surfaces always dark regardless of mode.
+ * Light/dark mode token overrides go here when dark mode is implemented.
+ * =========================================================================*/
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Placeholder — dark mode token overrides to be defined in a future slice. */
+  }
+}

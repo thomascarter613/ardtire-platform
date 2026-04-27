@@ -3,4 +3,17 @@ $schema: "https://moonrepo.dev/schemas/project.json"
 id: "@ardtire/tokens"
 language: "typescript"
 
-# Task overrides go here. Omit to inherit workspace defaults from .moon/tasks.yml.
+tasks:
+  build:
+    script: "bash -lc 'mkdir -p dist && cp src/tokens.css dist/tokens.css && bunx tsc -p tsconfig.build.json'"
+    inputs:
+      - "src/**/*"
+      - "tsconfig.json"
+      - "tsconfig.build.json"
+    outputs:
+      - "dist/**/*"
+
+  dev:
+    command: "bun run dev"
+    options:
+      persistent: true

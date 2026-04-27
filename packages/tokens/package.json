@@ -1,13 +1,30 @@
 {
   "name": "@ardtire/tokens",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "private": true,
+  "description": "Ardtire platform design tokens — shared CSS custom properties and TypeScript constants.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles": "./dist/tokens.css",
+    "./tokens.css": "./dist/tokens.css"
+  },
+  "files": ["dist"],
   "scripts": {
-    "build": "echo 'TODO: configure build'",
-    "dev": "echo 'TODO: configure dev'",
-    "lint": "biome lint ./src",
-    "format": "biome format ./src",
+    "build": "bun run build:css && bunx tsc -p tsconfig.build.json",
+    "build:css": "mkdir -p dist && cp src/tokens.css dist/tokens.css",
+    "build:ts": "bunx tsc -p tsconfig.build.json",
+    "dev": "bun run --watch build:ts",
+    "lint": "bunx biome lint --no-errors-on-unmatched ./src",
+    "format": "bunx biome format --no-errors-on-unmatched --write ./src",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run"
+    "test": "bunx vitest run"
+  },
+  "devDependencies": {
+    "typescript": "5.8.3",
+    "vitest": "^1.0.0"
   }
 }
