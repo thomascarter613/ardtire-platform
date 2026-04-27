@@ -25,10 +25,12 @@ tasks:
       - "src/**/*.{ts,tsx,js,jsx,json}"
 
   typecheck:
-    command: "bunx tsc --noEmit"
+    command:
+      - bash
+      - -lc
+      - "if find . -type f -name \"*.ts\" -print -o -type f -name \"*.tsx\" -print | head -1 | grep -q .; then bunx tsc --noEmit; else echo 'No TypeScript sources found; skipping typecheck.'; fi"
     inputs:
       - "src/**/*.{ts,tsx}"
-      - "tsconfig.json"
 
   test:
     command: "bunx vitest run"
